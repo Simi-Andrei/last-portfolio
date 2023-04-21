@@ -1,14 +1,28 @@
 import React from "react";
 import heroImage from "../assets/images/heroImage.png";
+import { motion } from "framer-motion";
 
 const Home = () => {
   return (
     <section
       id="home"
-      className="flex items-center justify-between pt-20 md:pt-52 relative flex-wrap"
+      className="flex items-center justify-between pt-20 md:pt-32 relative flex-wrap overflow-hidden h-[calc(100vh-52px)]"
     >
+      <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 0 }}
+        transition={{ duration: 2, ease: "easeOut" }}
+        className="z-50 absolute w-full h-[100vh] top-0 left-0 grid place-items-center"
+      >
+        <p className="text-6xl tracking-tighter">Welcome</p>
+      </motion.div>
       <div className="w-full md:w-1/2 text-center order-2 md:order-1">
-        <h1 className="mb-4 font-light">
+        <motion.h1
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 2 }}
+          className="mb-4 font-light"
+        >
           <span className="text-xl md:text-2xl tracking-tighter">
             Hi there! I'm
           </span>
@@ -20,17 +34,28 @@ const Home = () => {
           <span className="text-lg md:text-xl tracking-tighter">
             Frontend developer with passion for design
           </span>
-        </h1>
-        <a
-          href="#aboutme"
-          className="bg-cyan-800 hover:bg-cyan-700 text-stone-50 py-2 px-6 rounded-md transition-all duration-150 font-light"
+        </motion.h1>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 2 }}
         >
-          Explore
-        </a>
+          <a
+            href="#aboutme"
+            className="bg-cyan-800 hover:bg-cyan-700 text-stone-50 py-2 px-6 rounded-md transition-all duration-150 font-light"
+          >
+            Explore
+          </a>
+        </motion.div>
       </div>
-      <div className="w-full md:w-1/2 flex items-center justify-center order-1">
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 2 }}
+        className="w-full md:w-1/2 flex items-center justify-center order-1"
+      >
         <img src={heroImage} alt="home" className="w-5/6 brightness-95" />
-      </div>
+      </motion.div>
     </section>
   );
 };

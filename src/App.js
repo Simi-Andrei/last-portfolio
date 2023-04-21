@@ -4,17 +4,19 @@ import Home from "./sections/Home";
 import About from "./sections/About";
 import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
+import Contact from "./sections/Contact";
 
 const App = () => {
   return (
     <div className="flex flex-col min-h-screen justify-between">
       <Header />
-      <main className="flex-1 bg-stone-50">
+      <main className="flex-1">
         <div>
           <Home />
           <About />
           <Experience />
           <Projects />
+          <Contact />
         </div>
       </main>
       <Footer />

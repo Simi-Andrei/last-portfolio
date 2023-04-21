@@ -126,7 +126,7 @@ const Experience = () => {
         </div>
       </div>
       <div className="border-stone-200 px-6 lg:px-32 xl:px-72">
-        <h2 className="uppercase text-lg tracking-tighter font-light text-center my-10">
+        <h2 className="uppercase text-lg tracking-tighter font-light text-center mt-32 mb-10">
           Tech stack
         </h2>
         <div className="flex flex-wrap justify-between">

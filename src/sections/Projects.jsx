@@ -88,28 +88,39 @@ const Projects = () => {
   ];
 
   const style = {
-    transform: `translateX(-${activeIndex * 360}px)`,
+    transform: `translateX(-${
+      activeIndex *
+      `${
+        window.innerWidth <= 425
+          ? 328
+          : window.innerWidth <= 768
+          ? 340
+          : window.innerWidth <= 1024
+          ? 468
+          : window.innerWidth >= 1440 && 470
+      }`
+    }px)`,
   };
 
   return (
-    <section className="my-32">
-      <h2 className="uppercase text-lg tracking-tighter font-light text-center my-10">
+    <section className="my-32 bg-gradient-to-tr from-cyan-800 to-slate-950 pt-10 ">
+      <h2 className="uppercase text-lg tracking-tighter font-light text-center mb-10 text-stone-50">
         Projects
       </h2>
-      <div className="flex items-start justify-end">
-        <div className="w-1/2 h-[604px] px-10 flex items-center justify-end">
-          <div className="w-full md:w-1/2 ms-auto">
-            <h3 className="text-right text-xl tracking-tighter mb-6">
+      <div className="flex items-start justify-end flex-wrap p-2 text-stone-50 pb-10">
+        <div className="w-full md:w-1/2 h-[604px] px-2 md:px-10 flex items-center justify-end order-2 md:order-1">
+          <div className="w-full xl:w-1/2 ms-auto min-h-[400px]">
+            <h3 className="text-right text-2xl tracking-tighter mb-6">
               {slides[activeIndex].title}
             </h3>
-            <div className="h-32">
-              <p className="text-right text-stone-700 text-sm">
+            <div className="min-h-32">
+              <p className="text-right text-sm">
                 {slides[activeIndex].description}
               </p>
             </div>
-            <div className="h-20 mb-6">
+            <div className="min-h-20 my-6">
               <p className="text-right text-lg tracking-tighter">Tech stack</p>
-              <p className="text-right text-cyan-800 font-bold tracking-tighter drop-shadow-sm">
+              <p className="text-right text-cyan-500 font-bold tracking-tighter">
                 {slides[activeIndex].stack}
               </p>
             </div>
@@ -118,7 +129,7 @@ const Projects = () => {
                 href={slides[activeIndex].demo}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-cyan-800 text-white rounded-md py-2 px-4 text-sm hover:bg-cyan-700 transition-all duration-150 mr-4"
+                className="bg-cyan-500 text-stone-50 rounded-md py-2 px-4 text-sm hover:bg-cyan-600 transition-all duration-150 mr-4"
               >
                 Live Demo
               </a>
@@ -126,39 +137,46 @@ const Projects = () => {
                 href={slides[activeIndex].code}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-slate-900 text-white rounded-md py-2 px-4 text-sm hover:bg-slate-800 transition-all duration-150"
+                className="bg-slate-950 text-stone-50 rounded-md py-2 px-4 text-sm hover:bg-slate-900 transition-all duration-150"
               >
                 Source Code
               </a>
             </div>
           </div>
         </div>
-        <div className="w-1/2">
-          <div className="p-10 flex overflow-hidden h-[580px] items-center">
+        <div className="w-full md:w-1/2 order-1 md:order-2">
+          <div className="p-4 flex overflow-hidden h-[580px] items-center">
             {slides.map((slide) => (
               <div
                 style={style}
-                className={`flex items-center justify-center min-w-[360px] h-[520px] p-4 transition-all duration-500 ease-in-out ${
-                  activeIndex === slide.id - 1 && "scale-150"
-                }`}
+                className="flex items-center justify-center min-w-[328px] md:min-w-[340px] lg:min-w-[468px] xl:min-w-[470] h-[460px] p-6 transition-all duration-500 ease-in-out"
                 key={slide.id}
               >
                 <div
-                  className={`w-full h-full transition-all duration-500 px-2 py-6 rounded-2xl relative shadow-md shadow-grey-200 ${
+                  className={`w-full h-full transition-all duration-500 py-4 rounded-2xl relative shadow-md shadow-cyan-950 bg-transparent ${
                     activeIndex === slide.id - 1 &&
-                    "scale-105 -translate-y-[12px]"
+                    "scale-110 -translate-y-[20px]"
                   }`}
                 >
                   <div>
                     <img
                       src={slide.image}
                       alt="project"
-                      className="rounded-xl"
+                      className="relative z-10"
                     />
+                    <div className="bg-gray-100/60 w-24 h-24 mt-10 relative z-10 mx-auto rounded-full p-1 grid place-items-center shadow-md shadow-gray-200">
+                      <div className="bg-white w-full h-full rounded-full grid place-items-center p-1">
+                        <div className="border border-gray-100 w-full h-full rounded-full grid place-items-center">
+                          <p className="text-3xl text-cyan-800 font-bold tracking-tighter cursor-default">
+                            AS
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                     <img
                       src={abstractLines}
-                      alt=""
-                      className="absolute bottom-0 left-0 rounded-2xl"
+                      alt="abstract"
+                      className="absolute bottom-0 left-0 rounded-2xl opacity-90"
                     />
                   </div>
                 </div>
@@ -169,14 +187,14 @@ const Projects = () => {
             <button
               onClick={() => setActiveIndex(activeIndex - 1)}
               disabled={activeIndex === 0}
-              className="disabled:opacity-0 disabled:pointer-events-none bg-stone-100/100 rounded-full p-4 mr-4 shadow-sm shadow-stone-200"
+              className="disabled:opacity-0 disabled:pointer-events-none bg-cyan-400/50 rounded-full p-4 mr-4"
             >
               <BsChevronLeft className="text-3xl" />
             </button>
             <button
               onClick={() => setActiveIndex(activeIndex + 1)}
               disabled={activeIndex === 6}
-              className="disabled:opacity-0 disabled:pointer-events-none bg-stone-100/100 rounded-full p-4 ml-4 shadow-sm shadow-stone-200"
+              className="disabled:opacity-0 disabled:pointer-events-none bg-cyan-400/50 rounded-full p-4 ml-4"
             >
               <BsChevronRight className="text-3xl" />
             </button>

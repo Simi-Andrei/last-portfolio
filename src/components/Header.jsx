@@ -1,16 +1,31 @@
 import CV from "../assets/resume/simigiuAndreiCV.pdf";
 import { TbDownload } from "react-icons/tb";
+import { motion } from "framer-motion";
 
 const Header = () => {
   return (
-    <div className="py-1 sticky top-0 left-0 bg-stone-50 z-50">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, delay: 2 }}
+      className="py-1 sticky top-0 left-0 z-50 shadow-sm"
+    >
       <nav className="container mx-auto p-2 flex flex-col md:flex-row items-center justify-between font-light">
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 2 }}
+        >
           <a href="#home" className="uppercase tracking-tighter text-xl">
             Andrei Simigiu
           </a>
-        </div>
-        <div className="flex flex-col md:flex-row items-center">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 2 }}
+          className="flex flex-col md:flex-row items-center"
+        >
           <ul className="flex items-center mt-2 md:mt-0">
             <li className="mr-3">
               <a
@@ -60,9 +75,9 @@ const Header = () => {
           >
             <TbDownload className="text-lg mr-1" /> Resume
           </a>
-        </div>
+        </motion.div>
       </nav>
-    </div>
+    </motion.div>
   );
 };
 

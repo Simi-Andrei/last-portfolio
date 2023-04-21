@@ -7,7 +7,10 @@ const About = () => {
   const [toggle, setToggle] = useState(true);
 
   return (
-    <section id="aboutme" className="mt-72 bg-black py-10 px-2 xl:px-64">
+    <section
+      id="aboutme"
+      className="mt-32 bg-gradient-to-tr from-slate-950 to-cyan-800 py-10 px-2 xl:px-64"
+    >
       <h2 className="uppercase text-lg tracking-tighter font-light text-center text-stone-50 mb-10">
         About me
       </h2>
@@ -24,7 +27,7 @@ const About = () => {
           </div>
         </div>
         <div className="w-full md:w-1/2 px-2 md:px-10 py-10">
-          <div className="bg-stone-50 w-20 me-auto rounded-full h-10 shadow-inner relative">
+          <div className="w-20 me-auto rounded-full h-10 shadow-inner relative">
             <button
               onClick={() => setToggle(!toggle)}
               className={`bg-cyan-800 w-8 h-8 rounded-full mt-1 ml-1 transition-all duration-150 text-xs text-white ${
@@ -46,7 +49,7 @@ const About = () => {
               fill="#000"
             />
           </div>
-          <div className="w-full lg:w-96 lg:h-96 bg-stone-50 mt-4 rounded-2xl text-black p-6 shadow-inner">
+          <div className="w-full lg:w-96 lg:h-96 mt-4 rounded-2xl text-black p-6 shadow-inner">
             {toggle === true ? (
               <div>
                 <h3 className="text-center uppercase tracking-tighter font-bold text-cyan-800">
@@ -84,8 +87,8 @@ const About = () => {
             )}
           </div>
         </div>
-        <div className="absolute bg-blue-200 w-32 md:w-64 lg:w-96 h-10 md:h-20 bottom-0 left-0 border-b border-b-stone-50 border-l border-l-stone-50 bg-transparent opacity-50"></div>
-        <div className="absolute bg-blue-200 w-32 md:w-64 lg:w-96 h-10 md:h-20 top-0 right-0 border-t border-t-stone-50 border-r border-r-stone-50 bg-transparent opacity-50"></div>
+        <div className="absolute w-32 md:w-64 lg:w-96 h-10 md:h-20 bottom-0 left-0 border-b border-b-slate-500 border-l border-l-slate-500 bg-transparent opacity-50"></div>
+        <div className="absolute w-32 md:w-64 lg:w-96 h-10 md:h-20 top-0 right-0 border-t border-t-slate-500 border-r border-r-slate-500 bg-transparent opacity-50"></div>
       </div>
     </section>
   );
