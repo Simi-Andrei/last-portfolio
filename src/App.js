@@ -35,7 +35,7 @@ const App = () => {
         </div>
         <a
           href="#top"
-          className={`fixed bottom-10 right-20 bg-cyan-800 text-stone-50 rounded-full p-4 border border-stone-50 ${
+          className={`fixed bottom-4 md:bottom-8 lg:bottom-10 right-4 md:right-10 lg:right-20 bg-cyan-800 text-stone-50 rounded-full p-4 border border-stone-50 ${
             visible
               ? "opacity-100"
               : "opacity-0 pointer-events-none outline-none"
