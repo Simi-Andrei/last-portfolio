@@ -16,7 +16,7 @@ const Header = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <a href="#home" className="uppercase tracking-tighter text-xl">
+          <a href="#top" className="uppercase tracking-tighter text-xl">
             Andrei Simigiu
           </a>
         </motion.div>
@@ -29,7 +29,7 @@ const Header = () => {
           <ul className="flex items-center mt-2 md:mt-0">
             <li className="mr-3">
               <a
-                href="#home"
+                href="#top"
                 className="text-sm md:text-base hover:text-black transition-all duration-150"
               >
                 Home

@@ -104,7 +104,10 @@ const Projects = () => {
   };
 
   return (
-    <section className="my-32 bg-gradient-to-tr from-cyan-800 to-slate-950 pt-10 ">
+    <section
+      id="projects"
+      className="my-32 bg-gradient-to-tr from-cyan-800 to-slate-950 pt-10 "
+    >
       <motion.h2
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

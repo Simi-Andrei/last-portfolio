@@ -4,7 +4,7 @@ import { MdEmail, MdLocalPhone } from "react-icons/md";
 
 const Contact = () => {
   return (
-    <section className="mb-32">
+    <section id="contact" className="mb-32">
       <motion.h2
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

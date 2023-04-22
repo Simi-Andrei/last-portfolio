@@ -45,7 +45,7 @@ const Experience = () => {
   ];
 
   return (
-    <section className="mt-32">
+    <section id="experience" className="mt-32">
       <motion.h2
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
