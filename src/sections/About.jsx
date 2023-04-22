@@ -2,6 +2,7 @@ import { useState } from "react";
 import me from "../assets/images/simigiuAndrei.jpeg";
 import { HiCode, HiOutlineSwitchHorizontal } from "react-icons/hi";
 import { MdSkateboarding } from "react-icons/md";
+import { motion } from "framer-motion";
 
 const About = () => {
   const [toggle, setToggle] = useState(true);
@@ -11,11 +12,23 @@ const About = () => {
       id="aboutme"
       className="mt-32 bg-gradient-to-tr from-slate-950 to-cyan-800 py-10 px-2 xl:px-64"
     >
-      <h2 className="uppercase text-lg tracking-tighter font-light text-center text-stone-50 mb-10">
+      <motion.h2
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="uppercase text-lg tracking-tighter font-light text-center text-stone-50 mb-10"
+      >
         About me
-      </h2>
-      <div className="flex items-start justify-between flex-wrap relative">
-        <div className="w-full md:w-1/2 px-2 md:px-10 py-10">
+      </motion.h2>
+      <div className="flex items-start justify-between flex-wrap">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className="w-full md:w-1/2 px-2 md:px-10 py-10"
+        >
           <img
             src={me}
             alt="simigiu andrei"
@@ -25,9 +38,15 @@ const About = () => {
             <p className="uppercase tracking-tighter">Andrei Simigiu</p>
             <p className="text-sm font-light">Junior frontend developer</p>
           </div>
-        </div>
-        <div className="w-full md:w-1/2 px-2 md:px-10 py-10">
-          <div className="w-20 me-auto rounded-full h-10 shadow-inner relative">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className="w-full md:w-1/2 px-2 md:px-10 py-10"
+        >
+          <div className="w-20 me-auto rounded-full h-10 shadow-inner relative bg-stone-50">
             <button
               onClick={() => setToggle(!toggle)}
               className={`bg-cyan-800 w-8 h-8 rounded-full mt-1 ml-1 transition-all duration-150 text-xs text-white ${
@@ -49,7 +68,7 @@ const About = () => {
               fill="#000"
             />
           </div>
-          <div className="w-full lg:w-96 lg:h-96 mt-4 rounded-2xl text-black p-6 shadow-inner">
+          <div className="w-full lg:w-96 lg:h-96 mt-4 rounded-2xl text-black p-6 shadow-inner bg-stone-50">
             {toggle === true ? (
               <div>
                 <h3 className="text-center uppercase tracking-tighter font-bold text-cyan-800">
@@ -86,9 +105,7 @@ const About = () => {
               </div>
             )}
           </div>
-        </div>
-        <div className="absolute w-32 md:w-64 lg:w-96 h-10 md:h-20 bottom-0 left-0 border-b border-b-slate-500 border-l border-l-slate-500 bg-transparent opacity-50"></div>
-        <div className="absolute w-32 md:w-64 lg:w-96 h-10 md:h-20 top-0 right-0 border-t border-t-slate-500 border-r border-r-slate-500 bg-transparent opacity-50"></div>
+        </motion.div>
       </div>
     </section>
   );

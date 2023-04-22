@@ -14,6 +14,7 @@ import {
   SiMongodb,
 } from "react-icons/si";
 import jsonwebtoken from "../assets/images/jsonwebtoken.png";
+import { motion } from "framer-motion";
 
 const Experience = () => {
   const frontendSkills = [
@@ -45,10 +46,22 @@ const Experience = () => {
 
   return (
     <section className="mt-32">
-      <h2 className="uppercase text-lg tracking-tighter font-light text-center mb-10">
+      <motion.h2
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="uppercase text-lg tracking-tighter font-light text-center mb-10"
+      >
         Experience
-      </h2>
-      <div className="flex items-start justify-evenly flex-wrap">
+      </motion.h2>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.5 }}
+        className="flex items-start justify-evenly flex-wrap"
+      >
         <div className="w-full md:w-80 lg:w-96 py-4 px-6">
           <div className="border border-stone-200 shadow shadow-stone-200 rounded-2xl p-4">
             <div className="h-64 p-10 relative">
@@ -124,12 +137,24 @@ const Experience = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
       <div className="border-stone-200 px-6 lg:px-32 xl:px-72">
-        <h2 className="uppercase text-lg tracking-tighter font-light text-center mt-32 mb-10">
+        <motion.h2
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="uppercase text-lg tracking-tighter font-light text-center mt-32 mb-10"
+        >
           Tech stack
-        </h2>
-        <div className="flex flex-wrap justify-between">
+        </motion.h2>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className="flex flex-wrap justify-between"
+        >
           <div className="w-full md:w-[48%] lg:w-[49%]">
             <h3 className="font-bold tracking-tighter mb-4 text-center text-cyan-800 uppercase">
               Frontend
@@ -176,7 +201,7 @@ const Experience = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

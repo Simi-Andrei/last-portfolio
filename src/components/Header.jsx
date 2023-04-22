@@ -7,23 +7,23 @@ const Header = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.6, delay: 2 }}
-      className="py-1 sticky top-0 left-0 z-50 shadow-sm"
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className="py-1 sticky top-0 left-0 z-50 shadow-sm bg-stone-50"
     >
       <nav className="container mx-auto p-2 flex flex-col md:flex-row items-center justify-between font-light">
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 2 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
           <a href="#home" className="uppercase tracking-tighter text-xl">
             Andrei Simigiu
           </a>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
+          initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 2 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-col md:flex-row items-center"
         >
           <ul className="flex items-center mt-2 md:mt-0">

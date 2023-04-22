@@ -6,21 +6,13 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="flex items-center justify-between pt-20 md:pt-32 relative flex-wrap overflow-hidden h-[calc(100vh-52px)]"
+      className="flex items-center justify-between pt-20 md:pt-32 flex-wrap overflow-hidden h-[calc(100vh-52px)]"
     >
-      <motion.div
-        initial={{ opacity: 1 }}
-        animate={{ opacity: 0 }}
-        transition={{ duration: 2, ease: "easeOut" }}
-        className="z-50 absolute w-full h-[100vh] top-0 left-0 grid place-items-center"
-      >
-        <p className="text-6xl tracking-tighter">Welcome</p>
-      </motion.div>
       <div className="w-full md:w-1/2 text-center order-2 md:order-1">
         <motion.h1
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 2 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-4 font-light"
         >
           <span className="text-xl md:text-2xl tracking-tighter">
@@ -38,7 +30,7 @@ const Home = () => {
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 2 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
           <a
             href="#aboutme"
@@ -51,7 +43,7 @@ const Home = () => {
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 2 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
         className="w-full md:w-1/2 flex items-center justify-center order-1"
       >
         <img src={heroImage} alt="home" className="w-5/6 brightness-95" />

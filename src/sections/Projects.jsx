@@ -8,6 +8,7 @@ import firstPortfolio from "../assets/images/firstPortfolio.png";
 import abstractLines from "../assets/images/abstractLines.png";
 import { useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -92,7 +93,7 @@ const Projects = () => {
       activeIndex *
       `${
         window.innerWidth <= 425
-          ? 328
+          ? 330
           : window.innerWidth <= 768
           ? 340
           : window.innerWidth <= 1024
@@ -104,11 +105,23 @@ const Projects = () => {
 
   return (
     <section className="my-32 bg-gradient-to-tr from-cyan-800 to-slate-950 pt-10 ">
-      <h2 className="uppercase text-lg tracking-tighter font-light text-center mb-10 text-stone-50">
+      <motion.h2
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="uppercase text-lg tracking-tighter font-light text-center mb-10 text-stone-50"
+      >
         Projects
-      </h2>
+      </motion.h2>
       <div className="flex items-start justify-end flex-wrap p-2 text-stone-50 pb-10">
-        <div className="w-full md:w-1/2 h-[604px] px-2 md:px-10 flex items-center justify-end order-2 md:order-1">
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className="w-full md:w-1/2 h-[642px] px-2 md:px-10 flex items-center justify-end order-2 md:order-1"
+        >
           <div className="w-full xl:w-1/2 ms-auto min-h-[400px]">
             <h3 className="text-right text-2xl tracking-tighter mb-6">
               {slides[activeIndex].title}
@@ -143,13 +156,19 @@ const Projects = () => {
               </a>
             </div>
           </div>
-        </div>
-        <div className="w-full md:w-1/2 order-1 md:order-2">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className="w-full md:w-1/2 order-1 md:order-2"
+        >
           <div className="p-4 flex overflow-hidden h-[580px] items-center">
             {slides.map((slide) => (
               <div
                 style={style}
-                className="flex items-center justify-center min-w-[328px] md:min-w-[340px] lg:min-w-[468px] xl:min-w-[470] h-[460px] p-6 transition-all duration-500 ease-in-out"
+                className="flex items-center justify-center min-w-[330px] md:min-w-[340px] lg:min-w-[468px] xl:min-w-[470] h-[460px] p-6 transition-all duration-500 ease-in-out"
                 key={slide.id}
               >
                 <div
@@ -164,7 +183,7 @@ const Projects = () => {
                       alt="project"
                       className="relative z-10"
                     />
-                    <div className="bg-gray-100/60 w-24 h-24 mt-10 relative z-10 mx-auto rounded-full p-1 grid place-items-center shadow-md shadow-gray-200">
+                    <div className="bg-gray-100/60 w-24 h-24 mt-10 relative z-10 mx-auto rounded-full p-1 grid place-items-center">
                       <div className="bg-white w-full h-full rounded-full grid place-items-center p-1">
                         <div className="border border-gray-100 w-full h-full rounded-full grid place-items-center">
                           <p className="text-3xl text-cyan-800 font-bold tracking-tighter cursor-default">
@@ -199,7 +218,7 @@ const Projects = () => {
               <BsChevronRight className="text-3xl" />
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
