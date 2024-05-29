@@ -34,7 +34,7 @@ const Contact = () => {
           className="w-full md:w-1/2 p-10 text-left"
         >
           <p className="flex items-center">
-            <MdEmail className="mr-1" /> email:{" "}
+            <MdEmail className="mr-1" /> email:&nbsp;
             <a
               className="text-cyan-800 underline"
               href="mailto:simigiuandrei@gmail.com"

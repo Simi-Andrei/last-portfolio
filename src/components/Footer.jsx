@@ -11,7 +11,7 @@ const Footer = () => {
     >
       <div className="container mx-auto p-2 flex items-center justify-center">
         <p className="text-sm">
-          Simigiu Andrei &copy; 2023 | All rights reserved
+          Simigiu Andrei &copy; 2024 | All rights reserved
         </p>
       </div>
     </motion.footer>
