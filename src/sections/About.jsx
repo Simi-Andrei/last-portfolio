@@ -36,7 +36,7 @@ const About = () => {
           />
           <div className="mt-3 text-stone-50 text-right">
             <p className="uppercase tracking-tighter">Andrei Simigiu</p>
-            <p className="text-sm font-light">Junior frontend developer</p>
+            <p className="text-sm font-light">Frontend developer</p>
           </div>
         </motion.div>
         <motion.div
