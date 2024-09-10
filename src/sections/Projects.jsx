@@ -6,6 +6,7 @@ import artiSimi from "../assets/images/artiSimi.png";
 import hungryMe from "../assets/images/hungryMe.png";
 import firstPortfolio from "../assets/images/firstPortfolio.png";
 import abstractLines from "../assets/images/abstractLines.png";
+import slackCloneProject from "../assets/images/slackCloneProject.png";
 import { useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { motion } from "framer-motion";
@@ -16,6 +17,17 @@ const Projects = () => {
   const slides = [
     {
       id: 1,
+      image: slackCloneProject,
+      title: "NextJS14 Slack Clone",
+      description:
+        "Full stack application created with NextJS14, Convex as a real time database and many different packages and features. You can create workspaces and channels and direct message other members. You can also login and authenticate using credentials, Github provider and Google provider.",
+      stack:
+        "NextJS 14, Convex DB, TailwindCSS, Shadcn/ui, quill, nuqs, jotai, emoji-picker-react",
+      demo: "https://nextjs14-slack-clone.vercel.app/",
+      code: "https://github.com/Simi-Andrei/nextj14-slack-clone",
+    },
+    {
+      id: 2,
       image: techieProject,
       title: "techie E-commerce App",
       description:
@@ -26,7 +38,7 @@ const Projects = () => {
       code: "https://github.com/Simi-Andrei/itschool-mern-techie-project",
     },
     {
-      id: 2,
+      id: 3,
       image: groceryApp,
       title: "Grocery App",
       description:
@@ -37,7 +49,7 @@ const Projects = () => {
       code: "https://github.com/Simi-Andrei/mern-context-crud-app",
     },
     {
-      id: 3,
+      id: 4,
       image: weatherApp,
       title: "Weather App",
       description:
@@ -47,7 +59,7 @@ const Projects = () => {
       code: "https://github.com/Simi-Andrei/react-weather-app",
     },
     {
-      id: 4,
+      id: 5,
       image: firstPortfolio,
       title: "Previous Portfolio Website",
       description:
@@ -57,7 +69,7 @@ const Projects = () => {
       code: "https://github.com/Simi-Andrei/my-portfolio",
     },
     {
-      id: 5,
+      id: 6,
       image: vremeaITSchool,
       title: "ITSchool Weather App",
       description:
@@ -67,7 +79,7 @@ const Projects = () => {
       code: "#home",
     },
     {
-      id: 6,
+      id: 7,
       image: artiSimi,
       title: "ArtiSimi Presentation Website",
       description:
@@ -77,7 +89,7 @@ const Projects = () => {
       code: "#home",
     },
     {
-      id: 7,
+      id: 8,
       image: hungryMe,
       title: "HungryMe Restaurant Ordering App",
       description:
