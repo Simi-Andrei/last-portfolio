@@ -22,7 +22,8 @@ const Projects = () => {
       title: "NextJS14 Slack Clone",
       description:
         "Developed a real-time collaborative document editing application using Next.js with Convex as the database and Liveblocks for live synchronization. Designed to function as a Google Docs clone, the app supports multi-user editing, real-time presence tracking, threaded comments, and document organization features. Focused on robust backend integration, efficient state management, and seamless user experience in a collaborative environment.",
-      stack: "NextJS 14, Convex DB, TailwindCSS, Shadcn/ui, Liveblocks, nuqs",
+      stack:
+        "NextJS 14, Convex DB, Clerk Authentication, TailwindCSS, Shadcn/ui, Liveblocks, nuqs",
       demo: "https://docs-clone-olive.vercel.app/",
       code: "https://github.com/Simi-Andrei/docs-clone",
     },
